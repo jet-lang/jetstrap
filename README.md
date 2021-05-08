@@ -1,7 +1,9 @@
 # jetstrap
-A version of the Jet compiler written in C. This compiler is bare-bones and only exists for porting the main Jet compiler to new platforms.
+A version of the Jet compiler written in C++. This compiler is bare-bones and only exists for porting the main Jet compiler to new platforms.
 
 ## building
+Make sure you have a C++ toolchain available on your system, such as Clang or GCC.
+
 - `git clone https://github.com/jet-lang/jetstrap`
 - `make && make install`
 
