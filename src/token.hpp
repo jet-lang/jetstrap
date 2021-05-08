@@ -28,8 +28,17 @@ enum ValueType {
     NONE
 };
 
+enum BlockType {
+    STATEMENT,
+    FUNCTION,
+    VARIABLE,
+    STRUCT
+};
+
 class Block {
 public:
+    BlockType block_type;
+
     std::string label;
     std::vector<Block> children;
 };
