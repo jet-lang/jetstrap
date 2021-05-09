@@ -1,11 +1,19 @@
 CC = g++
 OUT = jetstrap
 
-debug:
-	$(CC) -o $(OUT) src/*.cpp -g -Og -Wall
+DEBUG_DIR = bin/debug
+RELEASE_DIR = bin/release
 
-release:
-	$(CC) -o $(OUT) src/*.cpp -s -O3 -Wall
+debug: $(DEBUG_DIR)
+	$(CC) -o bin/debug/$(OUT) src/*.cpp -g -Og -Wall
 
-clean:
-	rm *.o jetstrap
+release: $(RELEASE_DIR)
+	$(CC) -o bin/release/$(OUT) src/*.cpp -s -O3 -Wall
+
+$(DEBUG_DIR):
+	@echo "Folder $(DEBUG_DIR) does not exist, creating it"
+	mkdir -p $@
+
+$(RELEASE_DIR):
+	@echo "Folder $(RELEASE_DIR) does not exist, creating it"
+	mkdir -p $@
